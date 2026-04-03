@@ -411,6 +411,7 @@ This project demonstrates advanced AI-assisted analysis and documentation genera
 ### Supporting Infrastructure
 
 - [Assessment Prompts](.github/prompts/) - 8 standardized modular assessment templates
+- [Meta-Prompt: AI Code Addendum SOP Prompt Generator](.github/prompts/create-prompt-for-ai-code-addendum-sop.prompt.md) - Generates a second prompt that creates an SOP addendum for AI-generated code controls - [AI Log](ai-logs/2026/04/03/create-prompt-for-ai-code-addendum-sop-20260403/)
 - [Agent Definitions](.github/agents/) - Custom AI agents for specialized compliance analysis
 - [Instructions](.github/instructions/) - agent configurations and guidelines
 
