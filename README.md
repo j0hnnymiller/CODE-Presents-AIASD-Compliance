@@ -391,6 +391,7 @@ Examples:
 Resources for CODE Presents session on AI-assisted software development compliance:
 
 - **[docs/CODE-Presents-AIASD-Compliance.md](docs/CODE-Presents-AIASD-Compliance.md)** - Full presentation content
+- **[docs/IEC62304-Assessment-Process-Slides.md](docs/IEC62304-Assessment-Process-Slides.md)** - Marp slide deck describing the IEC 62304 assessment workflow, artifact demo sequence, and AI guardrails - [AI Log](ai-logs/2026/04/02/assessment-process-slide-deck-20260402/)
 - **[docs/CODE-Presents-AIASD-Compliance-Slides.md](docs/CODE-Presents-AIASD-Compliance-Slides.md)** - Slide deck in Markdown
 - **[docs/CODE-Presents-AIASD-Compliance-Slides.pptx](docs/CODE-Presents-AIASD-Compliance-Slides.pptx)** - PowerPoint presentation
 - **[docs/CODE-Presents-AIASD-Compliance-Abstract.md](docs/CODE-Presents-AIASD-Compliance-Abstract.md)** - Session abstract
