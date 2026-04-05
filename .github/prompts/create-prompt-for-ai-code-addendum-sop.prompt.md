@@ -89,6 +89,32 @@ Require the generated SOP addendum to be:
 - Explicitly mapped to relevant IEC 62304 lifecycle expectations where appropriate
 - Ready for quality-system review without placeholder text
 
+### 4.1 Markdown Formatting Requirements (CRITICAL)
+
+Require strict adherence to these formatting rules:
+
+**Subsection Numbering After Bullet Lists**:
+
+- Subsections (e.g., "3.2", "5.3", "10.4") following bullet-point lists MUST NOT be indented
+- Example CORRECT format:
+
+  ```
+  3.1 Code author/operator shall:
+
+  - Use only approved AI tools
+  - Document all prompts used
+
+  3.2 Technical reviewer shall:
+
+  - Perform line-by-line code review
+  ```
+
+- Example INCORRECT format (do not use):
+  ```
+    3.2 Technical reviewer shall:   ← DO NOT INDENT SUBSECTIONS
+  ```
+- All numbered subsections must start at column 0 (no leading spaces)
+
 ### 5. Deliverables Produced by the Generated Prompt
 
 Require the generated prompt to produce both files:
