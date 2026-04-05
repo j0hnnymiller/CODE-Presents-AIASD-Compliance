@@ -583,7 +583,7 @@ Based on Assessment 3 findings and current regulatory guidance, the following re
 - ✅ AI conversation logs saved to `ai-logs/` with proper structure
 - ✅ All files include complete AI provenance metadata (ai_generated, model, chat_id, ai_log, timestamps)
 - ✅ Total execution time ≤ 2 hours (120 minutes)
-- ✅ All deliverables saved to `assessments/assessment.4/` folder
+- ✅ All deliverables saved to `assessments/assessment.n/` folder
 
 ### Quality Criteria
 
@@ -738,7 +738,7 @@ Based on Assessment 3 findings and current regulatory guidance, the following re
 - ✅ Assessment 3 completed and documented
 - ✅ All 8 assessment prompt templates validated
 - ✅ AI provenance policy understood and implemented
-- ✅ Output folder `assessments/assessment.4/` exists
+- ✅ Output folder `assessments/assessment.n/` exists
 - ✅ D0003329_Rev_03_Final.md available and stable
 
 ---
@@ -748,7 +748,7 @@ Based on Assessment 3 findings and current regulatory guidance, the following re
 All deliverables will be created in:
 
 ```
-assessments/assessment.4/
+assessments/assessment.n/
 ├── D0003329_Rev_03_IEC62304_Compliance_Assessment_2026-04-01.md
 ├── D0003329_Rev_03.Analysis.Clause4.4.md
 ├── D0003329_Rev_03.Analysis.Clause5.md

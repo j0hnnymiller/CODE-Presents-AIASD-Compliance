@@ -29,6 +29,10 @@ This repository contains Acme's Standard Operating Procedures for software devel
   - Covers Software in Medical Devices (SiMD) and Software as Medical Devices (SaMD)
   - Lifecycle processes from planning through maintenance
 
+- **[sop/D0003329_Rev_03_Addendum_AI_Generated_Code_Controls.md](sop/D0003329_Rev_03_Addendum_AI_Generated_Code_Controls.md)** - Addendum defining auditable controls for AI-generated code in regulated software lifecycle activities - [AI Log](ai-logs/2026/04/03/create-ai-code-controls-addendum-artifacts-20260403/)
+
+- **[output/AI_Generated_Code_Controls_Addendum_Implementation_Checklist.md](output/AI_Generated_Code_Controls_Addendum_Implementation_Checklist.md)** - Implementation checklist mapping addendum controls to owners, evidence, and verification methods - [AI Log](ai-logs/2026/04/03/create-ai-code-controls-addendum-artifacts-20260403/)
+
 ### Reference Standards
 
 - **[standards/BSEN-62304.md](standards/BSEN-62304.md)** - Complete IEC 62304 standard text
@@ -56,51 +60,25 @@ The project includes multiple iterative compliance assessments demonstrating con
 - **Purpose**: Initial exploratory analysis establishing baseline assessment methodology
 - **Notes**: This assessment was performed without the text of the IEC 62304 standard and relied on the LLM's inherent understanding of the standard to determine compliance. This assessment was later compared to assessments that use the full standard text to validate the assessment methodology.
 
-### Assessment 1 - Comprehensive Baseline ✅ **CURRENT BASELINE**
+### Assessment 1 - Type B Re-Assessment ✅ **CURRENT BASELINE**
 
 - **Location**: [assessments/assessment.1/](assessments/assessment.1/)
-- **Date**: April 1, 2026
+- **Date**: April 4, 2026
 - **Document**: D0003329_Rev_03_Final (Software Development Work Instruction)
-- **Status**: **COMPLETE** - Establishes current compliance baseline
-- **Assessment Type**: Type 2 (Published SOP Assessment - Initial Baseline)
-- **Scope**: Complete first-time IEC 62304 compliance evaluation across all 6 clauses
-- **Overall Compliance**: **66% (Substantial Compliance with Significant Gaps)**
-- **Gap Summary**: 34 total gaps (8 Critical, 12 Significant, 9 Moderate, 5 Minor)
-- **Execution Time**: 1 hour 23 minutes (with parallelization - 55% faster than sequential)
+- **Status**: **COMPLETE** - Replaced prior Assessment 1 output with Type B content
+- **Assessment Type**: Type 2 (Type B): Published SOP Re-Assessment
+- **Scope**: IEC 62304 clauses 4.4, 5, 6, 7, 8, and 9 with remediation scenario recommendations
 
-**Key Deliverables (11 documents, ~65,035 words)**:
+**Key Deliverables**:
 
-- **[D0003329_Rev_03_IEC62304_Compliance_Assessment_2026-04-01.md](assessments/assessment.1/D0003329_Rev_03_IEC62304_Compliance_Assessment_2026-04-01.md)** (12,847 words) - Comprehensive compliance assessment synthesizing all clause findings; 66% overall compliance, 34 gaps identified, cross-cutting theme analysis, critical findings prioritization, complete gap catalog - [AI Log](ai-logs/2026/04/01/assessment-1-comprehensive-20260401/)
+- **[D0003329_Rev_03_IEC62304_Compliance_Assessment_2026-04-04.md](assessments/assessment.1/D0003329_Rev_03_IEC62304_Compliance_Assessment_2026-04-04.md)** - Comprehensive Type B synthesis with scenario framing.
+- **[D0003329_REV_03_Final.IEC62304_Executive_Summary.md](assessments/assessment.1/D0003329_REV_03_Final.IEC62304_Executive_Summary.md)** - Stakeholder decision summary for scenarios A/B/C.
+- **[Gap_Validation_and_Baseline_Analysis.md](assessments/assessment.1/Gap_Validation_and_Baseline_Analysis.md)** - Baseline gap inventory and refinement model for Type B execution.
+- **[Gap_Analysis_and_Remediation_Recommendations.md](assessments/assessment.1/Gap_Analysis_and_Remediation_Recommendations.md)** - Prioritized remediation catalog.
+- **[Projected_Compliance_Improvement_Analysis.md](assessments/assessment.1/Projected_Compliance_Improvement_Analysis.md)** - Projected uplift for scenarios A/B/C.
+- **[ASSESSMENT_PLAN.md](assessments/assessment.1/ASSESSMENT_PLAN.md)** and **[ASSESSMENT_COMPLETION.md](assessments/assessment.1/ASSESSMENT_COMPLETION.md)** - Planning and completion records.
 
-- **[D0003329_REV_03_Final.IEC62304_Executive_Summary.md](assessments/assessment.1/D0003329_REV_03_Final.IEC62304_Executive_Summary.md)** (6,847 words) - Executive summary for senior leadership; compliance status (66%), top 10 critical gaps, quick wins analysis, phased remediation roadmap (18 weeks to 92% compliance), resource requirements ($95K-$160K), ROI justification, stakeholder decision framework - [AI Log](ai-logs/2026/04/01/assessment-1-executive-summary-20260401/)
-
-- **[Gap_Analysis_and_Remediation_Recommendations.md](assessments/assessment.1/Gap_Analysis_and_Remediation_Recommendations.md)** (15,847 words) - Comprehensive 34-gap remediation catalog; detailed specifications for all critical gaps, prioritization framework (Must/Should/Nice-to-Have), 5 cross-cutting infrastructure initiatives, implementation dependencies map, resource loading scenarios (520-680 hours total effort) - [AI Log](ai-logs/2026/04/01/assessment-1-gap-remediation-20260402/)
-
-- **[Projected_Compliance_Improvement_Analysis.md](assessments/assessment.1/Projected_Compliance_Improvement_Analysis.md)** (10,500 words) - Three scenario compliance projections with ROI analysis; Scenario A: 73% in 6 weeks (40 hrs), Scenario B: 82% audit-ready in 12 weeks (85 hrs, RECOMMENDED), Scenario C: 92% excellence in 18 weeks (135 hrs); includes clause-by-clause improvement tables, risk quantification, phased roadmap, decision framework - [AI Log](ai-logs/2026/04/01/assessment-1-compliance-projection-20260401/)
-
-**Clause-Specific Assessments (6 documents, ~18,833 words)**:
-
-- **[D0003329_REV_03_Final.Analysis.Clause4.4.md](assessments/assessment.1/D0003329_REV_03_Final.Analysis.Clause4.4.md)** (8,900 words) - Legacy Software (42% compliance, 7 gaps, 2 critical) - [AI Log](ai-logs/2026/04/01/clause4.4-assessment-20260401-160230/)
-- **[D0003329_REV_03_Final.Analysis.Clause5.md](assessments/assessment.1/D0003329_REV_03_Final.Analysis.Clause5.md)** (2,200 words) - Development Process (78% compliance, 8 gaps, 1 critical) - [AI Log](ai-logs/2026/04/01/clause5-assessment-20260401-160230/)
-- **[D0003329_REV_03_Final.Analysis.Clause6.md](assessments/assessment.1/D0003329_REV_03_Final.Analysis.Clause6.md)** (3,847 words) - Maintenance (82% compliance, 4 gaps, 1 critical) - [AI Log](ai-logs/2026/04/01/clause6-assessment-20260401-160230/)
-- **[D0003329_REV_03_Final.Analysis.Clause7.md](assessments/assessment.1/D0003329_REV_03_Final.Analysis.Clause7.md)** (1,650 words) - Risk Management (55% compliance, 6 gaps, 3 CRITICAL ⚠️) - [AI Log](ai-logs/2026/04/01/clause7-assessment-20260401-160230/)
-- **[D0003329_REV_03_Final.Analysis.Clause8.md](assessments/assessment.1/D0003329_REV_03_Final.Analysis.Clause8.md)** (989 words) - Configuration Management (75% compliance, 3 gaps, strongest area) - [AI Log](ai-logs/2026/04/01/clause8-assessment-20260401-160230/)
-- **[D0003329_REV_03_Final.Analysis.Clause9.md](assessments/assessment.1/D0003329_REV_03_Final.Analysis.Clause9.md)** (1,247 words) - Problem Resolution (65% compliance, 6 gaps, 1 critical) - [AI Log](ai-logs/2026/04/01/clause9-assessment-20260401-160230/)
-
-**Planning & Completion**:
-
-- **[ASSESSMENT_PLAN.md](assessments/assessment.1/ASSESSMENT_PLAN.md)** - Assessment 1 implementation plan and execution strategy
-- **[ASSESSMENT_COMPLETION.md](assessments/assessment.1/ASSESSMENT_COMPLETION.md)** (15,008 words) - Execution summary, deliverables checklist, phase-by-phase timing breakdown, critical findings, recommended next steps, quality verification
-
-**Top 5 Critical Gaps (Immediate Attention)**:
-
-1. GAP-001: Risk Management Lifecycle Integration Missing (§7.1.1) - 32-40 hours
-2. GAP-002: Change Request Approval Gate Absent (§6.2.4) - 16-24 hours
-3. GAP-003: Problem Trend Analysis Not Required (§9.6) - 12-16 hours
-4. GAP-004: Legacy Software Gap Analysis Insufficient (§4.4.3) - 20-28 hours
-5. GAP-005: SOUP Anomaly List Evaluation Missing (§7.1.3) - 8-12 hours
-
-**Recommended Path**: Scenario B (Audit-Ready) - 82% compliance in 12 weeks, 85 hours effort, $12,750-$17,000 investment
+**AI Log**: [ai-logs/2026/04/04/assessment-1-type-b-20260404/](ai-logs/2026/04/04/assessment-1-type-b-20260404/)
 
 ### GitHub Folder Assessment (Supporting Analysis)
 
@@ -403,15 +381,13 @@ This project demonstrates advanced AI-assisted analysis and documentation genera
 ### Generated Assessments
 
 - [Assessment 1 Documents](assessments/assessment.1/) - Initial formal analysis with full standard text
-- [Assessment 2 Documents](assessments/assessment.2/) - Methodology refinement and gap analysis
-- [Assessment 3 Documents](assessments/assessment.3/) - Comprehensive baseline compliance evaluation
-- [Assessment 4 Documents](assessments/assessment.4/) - Draft Rev 04 assessment
 - [Assessment GitHub.1 Documents](assessments/assessment.github.1/) - Support infrastructure assessment
 
 ### Supporting Infrastructure
 
 - [Assessment Prompts](.github/prompts/) - 8 standardized modular assessment templates
 - [Meta-Prompt: AI Code Addendum SOP Prompt Generator](.github/prompts/create-prompt-for-ai-code-addendum-sop.prompt.md) - Generates a second prompt that creates an SOP addendum for AI-generated code controls - [AI Log](ai-logs/2026/04/03/create-prompt-for-ai-code-addendum-sop-20260403/)
+- [Prompt: AI Code Controls Addendum SOP Generator](.github/prompts/create-ai-code-controls-addendum-sop.prompt.md) - Generates the AI-generated code controls SOP addendum and implementation checklist - [AI Log](ai-logs/2026/04/03/create-ai-code-controls-addendum-sop-prompt-20260403/)
 - [Agent Definitions](.github/agents/) - Custom AI agents for specialized compliance analysis
 - [Instructions](.github/instructions/) - agent configurations and guidelines
 
@@ -457,23 +433,6 @@ ai-logs/
 │   │   ├── D0003329_REV_03_Final.Clause[4.4,5-9].justification.md
 │   │   ├── D0003329_REV_03_Final.IEC62304_Executive_Summary.md
 │   │   └── assessment-comparison-report.md
-│   ├── assessment.2/                           # Methodology refinement
-│   │   ├── D0003329_REV_03_Final.Analysis.Clause[4.4,6-9].md
-│   │   ├── D0003329_REV_03_Final.IEC62304_Executive_Summary.md
-│   │   ├── methodology-comparison-analysis.md
-│   │   └── justifications/
-│   ├── assessment.3/                           # ✅ Comprehensive baseline (Dec 17, 2025)
-│   │   ├── D0003329_Rev_03_IEC62304_Compliance_Assessment_2025-12-17.md
-│   │   ├── D0003329_REV_03_Final.Analysis.Clause[4.4,5-9].md
-│   │   ├── D0003329_REV_03_Final.IEC62304_Executive_Summary.md
-│   │   ├── Assessment-Comparison-Preliminary-vs-Assessment3.md
-│   │   ├── ASSESSMENT_COMPLETION.md
-│   │   ├── ISSUE_TEMPLATE.md
-│   │   └── justifications/
-│   ├── assessment.4/                           # Draft Rev 04 assessment (In Progress)
-│   │   ├── D0003329_REV_04_Draft.Analysis.Clause[4.4,7].md
-│   │   ├── D0003329_REV_04_Draft.IEC62304_Executive_Summary.md
-│   │   └── ASSESSMENT_COMPLETION.md
 │   └── assessment.github.1/                    # Support infrastructure assessment
 │       ├── .github_Folder_IEC62304_Compliance_Assessment.md
 │       ├── ChatMode_Medical_Device_Design_Controls_Expert_Analysis.md

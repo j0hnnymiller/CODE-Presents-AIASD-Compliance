@@ -4,7 +4,7 @@ model: "anthropic/claude-3.5-sonnet@2024-10-22"
 operator: "github-copilot"
 chat_id: "execute-assessment-4-prompt-type2-20260401"
 prompt: |
-  Regenerate execution prompt for Assessment 4 as Type 2 (Published SOP Re-Assessment)
+  Regenerate execution prompt for Assessment as Type 2 (Published SOP Re-Assessment)
   to match ASSESSMENT_PLAN.md - re-assess Rev 03 Final to validate Assessment 3 findings
   and develop remediation recommendations for stakeholder decision.
 started: "2026-04-01T15:00:00Z"
@@ -14,35 +14,41 @@ task_durations:
     duration: "00:20:00"
 total_duration: "00:20:00"
 ai_log: "ai-logs/2026/04/01/execute-assessment-4-prompt-type2-20260401/conversation.md"
-source: "assessments/assessment.4/ASSESSMENT_PLAN.md"
+source: "assessments/assessment.1/ASSESSMENT_PLAN.md"
 applyTo: "**/*.prompt.md"
 ---
 
-# Prompt: Execute Assessment 4 - IEC 62304 Periodic Re-Assessment of D0003329 Rev 03 Final
+# Prompt: Execute Assessment - IEC 62304 Periodic Re-Assessment of D0003329 Rev 03 Final
 
 ## Mission
 
-Execute Assessment 4 to **re-assess D0003329_Rev_03_Final.md** against IEC 62304 requirements, validate and refine the 35 gaps identified in Assessment 3 (Dec 2025), and develop comprehensive remediation recommendations that could inform future SOP revisions. This is a **Type 2: Published SOP Re-Assessment** - the output is recommendations for stakeholder decision, not verification of an existing draft.
+Execute Assessment to **assess or re-assess D0003329_Rev_03_Final.md** against IEC 62304 requirements and develop comprehensive remediation recommendations that could inform future SOP revisions. If a prior assessment exists, validate and refine prior gap findings. If no prior assessment exists, establish a baseline gap inventory from current evidence. This is a **Type 2 (Type B): Published SOP Re-Assessment** - the output is recommendations for stakeholder decision, not verification of an existing draft.
 
 ## Planning Document
 
 **CRITICAL**: Review the complete assessment plan before execution:
 
-**#file:assessments/assessment.4/ASSESSMENT_PLAN.md** - Complete assessment strategy, success criteria, and deliverables
+**#file:assessments/assessment.n/ASSESSMENT_PLAN.md** - Complete assessment strategy, success criteria, and deliverables
+
+## Scope Constraints
+
+> **IMPORTANT**: Do **not** read, reference, or load any files located under the `archive/` folder. All archive content is superseded and must not be used as input for this assessment.
 
 ## Required Input Files
 
 Load these files at the start:
 
-1. **#file:sop/D0003329_Rev_03_Final.md** - Target document for re-assessment (PRIMARY)
+1. **#file:sop/D0003329_Rev_03_Final.md** - Target document for assessment (PRIMARY)
 2. **#file:standards/BSEN-62304.md** - IEC 62304 standard reference (REQUIRED)
-3. **#file:assessments/assessment.3/D0003329_Rev_03_IEC62304_Compliance_Assessment_2025-12-17.md** - Assessment 3 baseline for validation (REQUIRED)
-4. **#file:assessments/assessment.3/D0003329_REV_03_Final.IEC62304_Executive_Summary.md** - Assessment 3 summary (CONTEXT)
-5. **All Assessment 3 clause-specific analyses** - For detailed gap validation (REFERENCE)
+3. **#file:assessments/assessment.[prior]/D0003329*Rev_03_IEC62304_Compliance_Assessment*[date].md** - Prior assessment baseline for validation (OPTIONAL)
+4. **#file:assessments/assessment.[prior]/D0003329_REV_03_Final.IEC62304_Executive_Summary.md** - Prior assessment summary (OPTIONAL CONTEXT)
+5. **Prior clause-specific analyses (if available)** - For detailed gap validation (OPTIONAL REFERENCE)
+
+If no prior assessment files exist, continue in baseline mode. Type B/Type 2 assessments do not require prior assessment artifacts.
 
 ## Execution Workflow
 
-Execute in 4 phases with maximum parallelization:
+Execute in phases with maximum parallelization:
 
 ---
 
@@ -53,23 +59,24 @@ Execute in 4 phases with maximum parallelization:
 1. **Load All Input Files**
    - Read D0003329_Rev_03_Final.md completely
    - Load BSEN-62304.md for standard reference
-   - Load all Assessment 3 findings for validation baseline
-   - Extract all 35 identified gaps from Assessment 3
+   - Load prior assessment findings for validation baseline (if available)
+   - If prior exists: extract previously identified gaps
+   - If no prior exists: initialize a baseline gap inventory from current document vs IEC 62304
 
 2. **Create Workspace Structure**
 
    ```
-   assessments/assessment.4/
+   assessments/assessment.n/
    ├── [Core re-assessment files to be created]
    ├── [Remediation recommendation reports]
    └── justifications/ [Gap-specific recommendation details]
    ```
 
-3. **Extract and Structure Assessment 3 Gap List**
-   - Parse Assessment 3 comprehensive assessment
-   - Create structured list of all 35 gaps (5 critical, 18 significant, 12 minor)
+3. **Extract and Structure Gap List (Validation or Baseline)**
+   - If prior exists: parse prior comprehensive assessment and structure prior gaps
+   - If no prior exists: create structured baseline gap list from current assessment evidence
    - Map each gap to specific IEC 62304 section and Rev 03 content
-   - Prepare gap validation and recommendation template
+   - Prepare gap validation/baseline and recommendation template
 
 4. **Establish Assessment Parameters**
    - Assessment Type: Type 2 (Published SOP Re-Assessment)
@@ -77,7 +84,7 @@ Execute in 4 phases with maximum parallelization:
    - Success Metric: Quality and actionability of recommendations
    - Timeframe: April 2026 periodic review cycle
 
-**Output**: Workspace ready, context loaded, gap validation framework prepared
+**Output**: Workspace ready, context loaded, and gap validation/baseline framework prepared
 
 ---
 
@@ -93,13 +100,13 @@ Each clause re-assessment is independent and can run simultaneously:
 **Target Sections**: D0003329_Rev_03 §6.1, Appendix 11.1
 **Re-Assessment Focus**:
 
-- Validate Assessment 3 legacy software gap findings
+- If prior exists: validate prior legacy software gap findings; if no prior exists: establish baseline legacy software gaps
 - Confirm current state: limited legacy software guidance, missing risk management activities enumeration
 - Develop specific remediation recommendations (e.g., expand Appendix 11.1 checklist, enumerate 5 risk activities per §4.4.2.b)
 - Prioritize recommendations by regulatory impact
 - Estimate implementation effort for each recommendation
 
-**Output**: `assessments/assessment.4/D0003329_REV_03_Final.Analysis.Clause4.4.md` (~3,700 words)
+**Output**: `assessments/assessment.n/D0003329_REV_03_Final.Analysis.Clause4.4.md` (~3,700 words)
 
 #### Task 3: Clause 5 - Software Development Process Re-Assessment (Parallel)
 
@@ -107,13 +114,13 @@ Each clause re-assessment is independent and can run simultaneously:
 **Target Sections**: D0003329_Rev_03 §6.2-6.9, Appendices
 **Re-Assessment Focus**:
 
-- Validate 15 Assessment 3 development process gaps
+- If prior exists: validate prior development process gaps; if no prior exists: establish baseline development process gaps
 - Confirm traceability framework limitations, Class C unit testing ambiguity, safety classification gaps
 - Develop comprehensive remediation recommendations (e.g., create requirements traceability appendix, differentiate Class C testing, enhance safety classification guidance)
 - Propose specific template additions or procedure enhancements
 - Rank by impact on development process effectiveness
 
-**Output**: `assessments/assessment.4/D0003329_REV_03_Final.Analysis.Clause5.md` (~2,200 words)
+**Output**: `assessments/assessment.n/D0003329_REV_03_Final.Analysis.Clause5.md` (~2,200 words)
 
 #### Task 4: Clause 6 - Software Maintenance Re-Assessment (Parallel)
 
@@ -121,13 +128,13 @@ Each clause re-assessment is independent and can run simultaneously:
 **Target Sections**: D0003329_Rev_03 §6.10
 **Re-Assessment Focus**:
 
-- Validate 4 Assessment 3 maintenance process gaps
+- If prior exists: validate prior maintenance process gaps; if no prior exists: establish baseline maintenance process gaps
 - Confirm regression testing documentation limitations, SOUP management gaps, feedback monitoring weaknesses
 - Develop targeted remediation recommendations (e.g., regression testing framework in §6.10.5, SOUP update procedures in §6.10.4)
 - Propose specific procedural enhancements
 - Estimate effort for maintenance process improvements
 
-**Output**: `assessments/assessment.4/D0003329_REV_03_Final.Analysis.Clause6.md` (~1,100 words)
+**Output**: `assessments/assessment.n/D0003329_REV_03_Final.Analysis.Clause6.md` (~1,100 words)
 
 #### Task 5: Clause 7 - Risk Management Re-Assessment (Parallel)
 
@@ -135,13 +142,13 @@ Each clause re-assessment is independent and can run simultaneously:
 **Target Sections**: D0003329_Rev_03 §6.11
 **Re-Assessment Focus**:
 
-- Validate 3 CRITICAL Assessment 3 risk management gaps
+- If prior exists: validate prior CRITICAL risk management gaps; if no prior exists: establish baseline CRITICAL risk management gaps
 - Confirm risk management integration workflow gaps, missing phase-specific integration points
 - Develop CRITICAL remediation recommendations (e.g., risk management integration workflow in §6.11.1 with phase-by-phase touchpoints)
 - Propose risk control verification process enhancements (§6.11.4)
 - Prioritize as HIGHEST IMPACT recommendations
 
-**Output**: `assessments/assessment.4/D0003329_REV_03_Final.Analysis.Clause7.md` (~800 words)
+**Output**: `assessments/assessment.n/D0003329_REV_03_Final.Analysis.Clause7.md` (~800 words)
 
 #### Task 6: Clause 8 - Configuration Management Re-Assessment (Parallel)
 
@@ -149,13 +156,13 @@ Each clause re-assessment is independent and can run simultaneously:
 **Target Sections**: D0003329_Rev_03 §6.12, Appendices
 **Re-Assessment Focus**:
 
-- Validate 2 Assessment 3 configuration management gaps
+- If prior exists: validate prior configuration management gaps; if no prior exists: establish baseline configuration management gaps
 - Confirm SOUP configuration management limitations (strongest area at 75% baseline)
 - Develop incremental improvement recommendations (e.g., SOUP list maintenance in Appendix, SOUP change control procedures)
 - Propose obsolescence monitoring enhancements
 - Note: Lower priority given strong baseline compliance
 
-**Output**: `assessments/assessment.4/D0003329_REV_03_Final.Analysis.Clause8.md` (~600 words)
+**Output**: `assessments/assessment.n/D0003329_REV_03_Final.Analysis.Clause8.md` (~600 words)
 
 #### Task 7: Clause 9 - Problem Resolution Re-Assessment (Parallel)
 
@@ -163,13 +170,13 @@ Each clause re-assessment is independent and can run simultaneously:
 **Target Sections**: D0003329_Rev_03 §6.13
 **Re-Assessment Focus**:
 
-- Validate 3 Assessment 3 problem resolution gaps
+- If prior exists: validate prior problem resolution gaps; if no prior exists: establish baseline problem resolution gaps
 - Confirm problem trend analysis process gaps, verification requirement limitations
 - Develop specific remediation recommendations (e.g., trend analysis process in §6.13.1, verification requirements in §6.13.2)
 - Propose CAPA integration enhancements
 - Estimate implementation complexity
 
-**Output**: `assessments/assessment.4/D0003329_REV_03_Final.Analysis.Clause9.md` (~850 words)
+**Output**: `assessments/assessment.n/D0003329_REV_03_Final.Analysis.Clause9.md` (~850 words)
 
 **Parallel Execution Strategy**:
 
@@ -200,14 +207,15 @@ Wait for all 6 to complete before proceeding to Phase 3
 **Scope**: Synthesize findings from all 6 clause re-assessments into comprehensive report
 **Re-Assessment Focus**:
 
-- Validate and refine all 35 Assessment 3 gaps (confirm still valid, update descriptions, consolidate duplicates)
-- Aggregate compliance status across all clauses (current state: 61% baseline)
+- If prior exists: validate and refine prior gaps (confirm still valid, update descriptions, consolidate duplicates)
+- If no prior exists: establish baseline gap set and severity distribution from current findings
+- Aggregate compliance status across all clauses (measured baseline for this run)
 - Synthesize all remediation recommendations across clauses
 - Identify cross-cutting themes requiring multi-clause coordination
 - Categorize recommendations by priority (critical, significant, minor), effort (high, medium, low), and impact (regulatory, process, documentation)
-- Calculate **projected** compliance improvement if recommendations implemented (model: 61% → 80%+ potential)
+- Calculate **projected** compliance improvement if recommendations implemented (using measured baseline from this run)
 
-**Output**: `assessments/assessment.4/D0003329_Rev_03_IEC62304_Compliance_Assessment_2026-04-XX.md` (~8,500 words)
+**Output**: `assessments/assessment.n/D0003329_Rev_03_IEC62304_Compliance_Assessment_2026-04-XX.md` (~8,500 words)
 
 #### Task 8: Executive Summary
 
@@ -216,14 +224,14 @@ Wait for all 6 to complete before proceeding to Phase 3
 **Scope**: Create executive-level synthesis for stakeholder decision-making
 **Re-Assessment Focus**:
 
-- Current compliance status validation (confirm 61% baseline or update)
-- Validated gap count (confirm 35 gaps: 5 critical, 18 significant, 12 minor)
+- Current compliance status validation (measured baseline for this run)
+- Validated or baseline gap count (use prior-validated totals if prior exists; otherwise report newly established totals)
 - Top 10 priority recommendations (ranked by impact × urgency)
 - Recommended phased implementation roadmap (e.g., Rev 04 for critical, Rev 05 for significant)
 - Projected compliance improvement scenarios (optimistic, realistic, conservative)
 - Stakeholder decision framework: which recommendations to implement and when
 
-**Output**: `assessments/assessment.4/D0003329_REV_03_Final.IEC62304_Executive_Summary.md` (~2,700 words)
+**Output**: `assessments/assessment.n/D0003329_REV_03_Final.IEC62304_Executive_Summary.md` (~2,700 words)
 
 **Phase 3 Output**: 2 synthesis documents (~11,200 words total)
 
@@ -233,30 +241,30 @@ Wait for all 6 to complete before proceeding to Phase 3
 
 **Parallel Execution Opportunity** (independent analysis reports):
 
-#### Report 1: Gap Validation and Refinement (Can run in parallel)
+#### Report 1: Gap Validation and Refinement (or Baseline Gap Establishment) (Can run in parallel)
 
-**Output**: `assessments/assessment.4/Gap_Validation_and_Refinement_Assessment3_to_Assessment4.md`
+**Output**: `assessments/assessment.n/Gap_Validation_and_Baseline_Analysis.md`
 **Analysis Required**:
 
-1. **Create Gap Validation Matrix**:
-   | Gap ID | IEC Section | Assessment 3 Finding | Severity | Assessment 4 Status | Refinement Notes | Still Valid? |
-   |--------|-------------|---------------------|----------|---------------------|------------------|--------------|
-   | [For all 35 gaps] |
+1. **Create Gap Validation/Baseline Matrix**:
+   | Gap ID | IEC Section | Prior Finding (if available) | Severity | Assessment Status | Refinement/Baseline Notes | Still Valid? |
+   |--------|-------------|-------------------------------|----------|-------------------|---------------------------|--------------|
+   | [For all identified gaps] |
 
 2. **Gap Status Categories**:
    - **CONFIRMED**: Gap validated, still present in Rev 03 Final as described
    - **REFINED**: Gap validated but description needs update or consolidation
    - **RESOLVED**: Gap no longer applicable (if any minor process improvements occurred)
    - **SPLIT**: Gap actually represents multiple distinct issues requiring separate recommendations
+   - **NEW**: Gap identified in baseline mode (no prior assessment reference)
 
-3. **Validation Metrics**:
-   - Gaps confirmed unchanged: X of 35
-   - Gaps refined/updated: Y of 35
-   - Gaps consolidated: Z of 35
-   - Final validated gap count: XX
+3. **Validation/Baseline Metrics**:
+   - If prior exists: gaps confirmed unchanged, refined/updated, and consolidated
+   - If no prior exists: new gaps identified by severity and clause
+   - Final gap count: XX
 
-4. **Gap Prioritization Refinement**:
-   - Critical gaps re-prioritized based on current context
+4. **Gap Prioritization**:
+   - Critical gaps prioritized based on current context
    - Significant gaps ranked by regulatory impact
    - Minor gaps assessed for quick-win opportunities
 
@@ -264,7 +272,7 @@ Wait for all 6 to complete before proceeding to Phase 3
 
 #### Report 2: Remediation Recommendations Report (Can run in parallel)
 
-**Output**: `assessments/assessment.4/Gap_Analysis_and_Remediation_Recommendations.md`
+**Output**: `assessments/assessment.n/Gap_Analysis_and_Remediation_Recommendations.md`
 **Analysis Required**:
 
 1. **Comprehensive Recommendation Catalog**:
@@ -299,7 +307,7 @@ Wait for all 6 to complete before proceeding to Phase 3
 
 #### Report 3: Projected Compliance Improvement Analysis (Can run in parallel)
 
-**Output**: `assessments/assessment.4/Projected_Compliance_Improvement_Analysis.md`
+**Output**: `assessments/assessment.n/Projected_Compliance_Improvement_Analysis.md`
 **Analysis Required**:
 
 1. **Scenario Modeling**:
@@ -369,7 +377,7 @@ Wait for all 3 to complete
    - Quality verification results
 
 2. **Update README.md**
-   - Add Assessment 4 section
+   - Add Assessment section
    - Link to all 11 deliverable files
    - Update assessment history table
    - Note assessment type (Type 2: Published SOP Re-Assessment)
@@ -386,8 +394,9 @@ Wait for all 3 to complete
    - All timestamps and task durations documented
 
 5. **Final Quality Check**
-   - Run through Assessment 4 Type 2 success criteria checklist
-   - Verify all 35 gaps validated and addressed in recommendations
+   - Run through Assessment Type 2 success criteria checklist
+   - If prior exists: verify prior gaps validated and addressed in recommendations
+   - If no prior exists: verify baseline gap set is complete and addressed in recommendations
    - Confirm all recommendations are specific and actionable
    - Validate phased implementation roadmap is realistic
    - Confirm stakeholder decision framework is clear
@@ -398,7 +407,7 @@ Wait for all 3 to complete
 
 ## Success Criteria Validation (Type 2: Published SOP Re-Assessment)
 
-Before marking Assessment 4 complete, verify:
+Before marking Assessment complete, verify:
 
 ### Completion Criteria ✅
 
@@ -406,14 +415,14 @@ Before marking Assessment 4 complete, verify:
 - [ ] All 3 recommendation/analysis reports generated
 - [ ] All documents include complete AI provenance metadata
 - [ ] All AI conversation logs created in proper structure
-- [ ] README.md updated with Assessment 4 entry
+- [ ] README.md updated with Assessment entry
 - [ ] ASSESSMENT_COMPLETION.md created
 
 ### Quality Criteria ✅
 
 - [ ] Each re-assessment follows Assessment 3 format structure for comparability
 - [ ] All IEC 62304 citations accurate and specific
-- [ ] Gap validation covers all 35 Assessment 3 gaps (confirmed/refined/consolidated)
+- [ ] Gap analysis is complete for this run (prior validation if available, baseline establishment if no prior)
 - [ ] Each remediation recommendation includes specific implementation guidance
 - [ ] Recommendations categorized by priority (critical/significant/minor) and effort (high/medium/low)
 - [ ] Executive summary provides clear stakeholder decision framework
@@ -426,16 +435,16 @@ Before marking Assessment 4 complete, verify:
   - [ ] Implementation effort estimate (hours)
   - [ ] Expected compliance impact (which gaps addressed)
   - [ ] Verification criteria to confirm effectiveness
-- [ ] Recommendations address all 5 critical gaps with detailed guidance
-- [ ] Recommendations address all 18 significant gaps with actionable steps
+- [ ] Recommendations address all critical gaps identified in this run with detailed guidance
+- [ ] Recommendations address all significant gaps identified in this run with actionable steps
 - [ ] Cross-cutting recommendations identified (address multiple gaps)
 - [ ] Implementation dependencies documented
 
 ### Projected Compliance Improvement Validation ✅
 
-- [ ] Scenario A (Critical Only): Modeled compliance improvement ~70% (+9%)
-- [ ] Scenario B (Critical + Priority Significant): Modeled compliance improvement ~80% (+19%)
-- [ ] Scenario C (All Recommendations): Modeled compliance improvement ~90% (+29%)
+- [ ] Scenario A (Critical Only): Modeled compliance improvement from measured baseline
+- [ ] Scenario B (Critical + Priority Significant): Modeled compliance improvement from measured baseline
+- [ ] Scenario C (All Recommendations): Modeled compliance improvement from measured baseline
 - [ ] Each scenario includes realistic effort estimates
 - [ ] Phased implementation roadmap spans Rev 04, Rev 05, and future
 
@@ -471,7 +480,7 @@ Before marking Assessment 4 complete, verify:
 
 ## Output File Checklist
 
-Generate exactly 11 files in `assessments/assessment.4/`:
+Generate exactly 11 files in `assessments/assessment.n/`:
 
 **Core Re-Assessments (8 files)**:
 
@@ -486,7 +495,7 @@ Generate exactly 11 files in `assessments/assessment.4/`:
 
 **Recommendation and Analysis Reports (3 files)**:
 
-9. ✅ Gap_Validation_and_Refinement_Assessment3_to_Assessment4.md
+9. ✅ Gap_Validation_and_Baseline_Analysis.md
 10. ✅ Gap_Analysis_and_Remediation_Recommendations.md
 11. ✅ Projected_Compliance_Improvement_Analysis.md
 
@@ -512,7 +521,7 @@ model: "anthropic/claude-3.5-sonnet@2024-10-22" # Or current model
 operator: "github-copilot-coding-agent"
 chat_id: "assessment-4-[assessment-type]-20260401" # Unique per assessment
 prompt: |
-  Execute Assessment 4 [specific task] per execute-assessment-4.prompt.md
+  Execute Assessment [specific task] per execute-assessment-4.prompt.md
 started: "2026-04-01THH:MM:SSZ" # ISO8601 timestamp
 ended: "2026-04-01THH:MM:SSZ" # ISO8601 timestamp
 task_durations:
@@ -530,7 +539,7 @@ source: ".github/prompts/execute-assessment-4.prompt.md"
 
 If any phase fails:
 
-1. **Missing Input Files**: Halt and report which files cannot be loaded
+1. **Missing Required Input Files**: Halt and report missing required files (target SOP or IEC standard). For missing optional prior-assessment files, continue in baseline mode and note the condition.
 2. **Parallel Task Failure**: Continue with remaining tasks, note failure in completion summary
 3. **Gap Mapping Incomplete**: Flag missing gaps, attempt manual reconciliation
 4. **Compliance Target Not Met**: Document in executive summary, recommend Rev 05 cycle
